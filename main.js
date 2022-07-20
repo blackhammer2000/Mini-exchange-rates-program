@@ -41,22 +41,24 @@ const lowestStudents = sortedStudentsScores.filter((student) => {
   if (student.score === lowestStudent.score) return student;
 });
 
-alert(
-  `The following are the highest scoring students: \n ${highestStudents.map(
-    (student, index) => {
-      return `\n ${index + 1}: Student ${student.index} scored ${
-        student.score
-      }`;
-    }
-  )}`
-);
+if (studentsScores.length === 3) {
+  alert(
+    `The following are the highest scoring students: \n ${highestStudents.map(
+      (student, index) => {
+        return `\n ${index + 1}: Student ${student.index} scored ${
+          student.score
+        }`;
+      }
+    )}`
+  );
 
-alert(
-  `The following are the lowest scoring students: \n ${lowestStudents.map(
-    (student, index) => {
-      return `\n ${index + 1}: Student ${student.index} scored ${
-        student.score
-      }`;
-    }
-  )}`
-);
+  alert(
+    `The following are the lowest scoring students: \n ${lowestStudents.map(
+      (student, index) => {
+        return `\n ${index + 1}: Student ${student.index} scored ${
+          student.score
+        }`;
+      }
+    )}`
+  );
+}
