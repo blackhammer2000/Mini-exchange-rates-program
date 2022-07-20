@@ -50,7 +50,7 @@ if (Object.keys(dataProcessed).length === 3) {
   const transactionID = longTransactionID.slice(0, lastIndex);
 
   alert(
-    `${transactionID.toUpperCase()} confirmed. \n${amount}${baseCurrency} is equal to ${convertedAmount}${quoteCurrency}`
+    `${quoteCurrency}${transactionID.toUpperCase()}${baseCurrency} confirmed. You have converted\n${amount}${baseCurrency} to ${quoteCurrency} and it is equal to ${convertedAmount}${quoteCurrency}`
   );
 } else {
   alert(
