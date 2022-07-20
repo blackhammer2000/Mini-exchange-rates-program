@@ -20,7 +20,7 @@ let dataProcessed = {};
 
 const fromCurrency = prompt("Enter currency to convert FROM:").toUpperCase();
 if (currencies.includes(fromCurrency)) {
-  const amount = parseInt(prompt("Enter the Amount to convert:")).toFixed(2);
+  const amount = parseFloat(prompt("Enter the Amount to convert:")).toFixed(2);
   if (amount > 0) {
     const toCurrency = prompt("Enter currency to convert TO:").toUpperCase();
     if (currencies.includes(toCurrency)) {
@@ -31,15 +31,12 @@ if (currencies.includes(fromCurrency)) {
       };
     } else {
       alert("Enter a valid (TO) currency.");
-      return;
     }
   } else {
     alert("Enter a valid amount");
-    return;
   }
 } else {
   alert("Enter a valid (FROM) currency.");
-  return;
 }
 
 if (Object.keys(dataProcessed).length === 3) {
@@ -56,5 +53,7 @@ if (Object.keys(dataProcessed).length === 3) {
     `${transactionID.toUpperCase()} confirmed. \n${amount}${baseCurrency} is equal to ${convertedAmount}${quoteCurrency}`
   );
 } else {
-  alert("Please provide all the required information.");
+  alert(
+    "An error has occured. Please provide all the correct required information."
+  );
 }
